@@ -1,0 +1,18 @@
+The host tools needed for building LFS are checked and, if necessary,
+installed. Then a partition which will host LFS system is prepared.
+
+2.4. Creating a New Partition
+
+Like most other operating system, LFS is usually on a dedicated partition.
+The recommendedapproach to building an LFS system is to use an availabe empty 
+partion or, if you have enough unpartitions space, to create one.
+
+Two partitions will be created.
+1. Root partition
+2. Swap partition
+
+LFS can use any file system recognized by the linux kernel, but the most common
+type are ext3 & ext4.
+ext4: is the latest version of the ext file system family of partition types.
+
+
