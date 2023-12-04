@@ -1,5 +1,3 @@
-# PiNux
-My Custom Linux Operating System
+# PiNux - A Multithreaded Kernel
 
-This is version 10.1-systemd of the Linux From Scratch book.
-
+Custom Linux Operating System
