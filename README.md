@@ -1,3 +1,10 @@
 # PiNux - A Multithreaded Kernel
+================================
+ 
+ - [Introduction] (#introduction)
 
-Custom Linux Operating System
+---------------------------------
+
+# Introuction
+
+A basic Multithereaded Kernel from Scratch
