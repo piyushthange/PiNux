@@ -1,10 +1,11 @@
-# PiNux - A Multithreaded Kernel
-================================
+PiNux - A Multithreaded Kernel
+==============================
+
  
- - [Introduction] (#introduction)
+- [Introduction](#introduction)
 
 ---------------------------------
 
-# Introuction
+# Introduction
 
-A basic Multithereaded Kernel from Scratch
+A basic Multithereaded Kernel from Scratch.
