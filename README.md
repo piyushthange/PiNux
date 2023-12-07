@@ -13,10 +13,10 @@ A basic Multithereaded Kernel from Scratch.
 # Real Mode Development
 
 Modern Operating systems run in Protected Mode, due to reason of security,
-less memory access, & 16 bits accessible at one time.
+less memory access & 16 bits accessible at one time.
 In Real Mode only 1MB of RAM is accissible which is done through segmentation
 model. Doesn't matter how much RAM you have.
-Real Mode is based on x86 design & has same limitations. All the code in 
+Real Mode is based on x86 design & has some limitations. All the code in 
 Real Mode is required to be 16 bits.
 There's no memory security nor hardware security & Simple user program can
 destroy OS. \
