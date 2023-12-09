@@ -13,7 +13,7 @@ handle_zero:
 	mov ax, 0eh
 	mov al, 'A'
 	mov bx, 0x7c0
-	int 0
+	int 0x10
 	iret
 
 step2:
@@ -25,6 +25,9 @@ step2:
 	mov ss, ax
 	mov sp, 0x7c00
 	sti ; Enable Interrupts
+
+	mov word[ss:0x00], handle_zero
+	mov word[ss:0x02], 0x7c0
 
 	mov si, message
 	call print
