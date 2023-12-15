@@ -3,7 +3,7 @@
     <img width="100" src="logo.png">
 </p>
 
-<h1 align="center" style="font-family: Arial"> 
+<h1 align="center"> 
     PiNux - A Multithreaded Kernel 
 </h1>
 
