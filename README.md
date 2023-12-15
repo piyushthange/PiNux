@@ -1,11 +1,17 @@
-PiNux - A Multithreaded Kernel
-==============================
+<!-- ![Alt text](logo.png) -->
+<p align="center">
+    <img width="100" src="logo.png">
+</p>
 
- 
+<h1 align="center" style="font-family: Arial"> 
+    PiNux - A Multithreaded Kernel 
+</h1>
+
+# Index
 - [Introduction](#introduction)
 - [Real Mode Development](#real-mode-development)
 
----------------------------------
+---
 
 # Introduction
 
