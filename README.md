@@ -31,7 +31,7 @@ In Real mode only 8 & 16 bit registers are accissible hence only request
 memory address offsets of upto 65535.
 Operations can only be done with 16 bit numbers.
 
-Segmentation Memory Model.
+## Segmentation Memory Model.
 Memory is accessed by segment & an offset
 
 For bootloader use the following command to create a bin out of an asm
