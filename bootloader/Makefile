@@ -3,4 +3,4 @@ all:
 	dd if=msg.txt >> boot.bin
 	dd if=/dev/zero bs=512 count=1 >> boot.bin
 clean:
-	rm -rf boot.asm
+	rm -rf boot.bin
