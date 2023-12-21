@@ -16,7 +16,8 @@
 # Introduction
 
 A basic Multithereaded Kernel from Scratch. This OS is a hobby project 
-& a base understanding is going to build for the OS.
+& a base understanding is going to build for the OS. Addition to this I'll
+be adding some extra gui if possible for it.
 
 # Real Mode Development
 
