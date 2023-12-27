@@ -10,6 +10,8 @@
 # Index
 - [Introduction](#introduction)
 - [Real Mode Development](#real-mode-development)
+- [Segmentation Memory Model](#segmentation-memory-model)
+- [Creation of bootloader](creation-of-bootloader)
 
 ---
 
@@ -75,6 +77,10 @@ Operations can only be done with 16 bit numbers.
 Memory is accessed by segment & an offset
 
 For bootloader use the following command to create a bin out of an asm
+
+## Creation of bootloader.
+
+Use `bootloader/boot.asm` for generating `boot.bin`
 
 `nasm -f bin boot.asm -o boot.bin` \
 `ndisasm boot.bin #This is Netwide Disassembler for 80x86 bin file` \
