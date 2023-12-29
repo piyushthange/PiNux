@@ -1,54 +1,14 @@
-ORG 0
-BITS 16
-_start:
-	jmp short start
-	nop
-
-times 33 db 0
+;This is 1st & simple bootloader program
+ORG 0x7C00 ;Originate from address
+BITS 16 ;tell assembler that this is 16 bit arch
 
 start:
-	jmp 0x7c0:step2
-
-handle_zero:
-	mov ax, 0eh
-	mov al, 'A'
-	mov bx, 0x7c0
-	int 0x10
-	iret
-
-step2:
-	cli ; Clear Interrupts
-	mov ax, 0x7c0
-	mov ds, ax
-	mov es, ax
-	mov ax, 0x00
-	mov ss, ax
-	mov sp, 0x7c00
-	sti ; Enable Interrupts
-
-	mov word[ss:0x00], handle_zero
-	mov word[ss:0x02], 0x7c0
-
-	mov si, message
-	call print
-	jmp $
-print:
-	mov bx, 0
-.loop:
-	lodsb
-	cmp al, 0
-	je .done
-	call print_char
-	jmp .loop
-.done:
-	ret
-
-print_char:
+;start means we can write code here
 	mov ah, 0eh
-	int 0x10
-	ret
+	mov al, 'A'
+	int 0x10 ; this is interrupt 0x10 is calling the BIOS.
 
-message: db 'Helllo World!', 0
+	jmp $ ;keep jumping to itself
 
-times 510-($ - $$) db 0
-dw 0xAA55
+times 510-($ - $$) db 0 ; fill atleast 510 bytes of data
+dw 0xAA55 ;assemble word 
