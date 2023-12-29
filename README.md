@@ -87,3 +87,4 @@ Use `bootloader/boot.asm` for generating `boot.bin`
 
 # Protected Mode Development
 
+test
