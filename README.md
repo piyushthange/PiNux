@@ -62,22 +62,24 @@ required to create the OS.
 
 # Real Mode Development
 
+### *Real Mode*
+
 Modern Operating systems run in Protected Mode, due to reason of security, \
 less memory access & 16 bits accessible at one time in Real Mode. only 1MB \
 of RAM is accissible which is done through segmentation model. Doesn't \
-matter how much RAM you have. Real Mode is based on x86 design & has some \
-limitations. All the code in Real Mode is required to be 16 bits. There's \
-no memory security nor hardware security & Simple user program can destroy \
-OS. In Real mode only 8 & 16 bit registers are accissible hence only \
-requestmemory address offsets of upto 65535. Operations can only be done \
-with 16 bit numbers.
+matter how much RAM you have. Real Mode is based on x86 from 1970 design & has \
+some limitations. All the code in Real Mode is required to be 16 bits. \
+There's no memory security nor hardware security & Simple user program can \
+destroy OS. In Real mode only 8 & 16 bit registers are accissible hence only \
+request memory address offsets/Numbers of upto 65535. \
+Operations can only be done with 16 bit numbers.
 
-### *Segmentation Memory Model.*
+### *Segmentation Memory Model*
 
 Memory is accessed by segment & an offset
 For bootloader use the following command to create a bin out of an asm\
 
-### *Creation of bootloader.*
+### *Creation of bootloader*
 
 Use `bootloader/boot.asm` for generating `boot.bin`
 
@@ -86,5 +88,3 @@ Use `bootloader/boot.asm` for generating `boot.bin`
 `qemu-system-x86_64 -hda boot.bin #This will display the first char form bin`
 
 # Protected Mode Development
-
-test
