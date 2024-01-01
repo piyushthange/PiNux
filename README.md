@@ -103,12 +103,19 @@ instruction is.
 
 Different instruction use different segment registers.
 
-### *Creation of bootloader*
+[FAT(File Allocation Table)](https://wiki.osdev.org/FAT)
 
-Use `bootloader/boot.asm` for generating `boot.bin`
+### *Burning bootloader to USB*
 
-`nasm -f bin boot.asm -o boot.bin` \
-`ndisasm boot.bin #This is Netwide Disassembler for 80x86 bin file` \
-`qemu-system-x86_64 -hda boot.bin #This will display the first char form bin`
+To check bootloader on a real system we'll burn the `boot.bin` to  USB key.
+- Connect the USB key to your pc
+- List disk & check for USB key `sudo fdisk -l`
+- Pick `sda/sdb` as described in the output `fdisk`
+- Burn the disk. `if`: input file `of`: output file
+ `sudo dd if=boot.bin of=/dev/sda`
+- Unplug the USB key
+- Plug the USB key into the PC which is powered off
+- Enter BIOS go to boot menu 
+- Boot using USB key.
 
 # Protected Mode Development
