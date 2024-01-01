@@ -1,6 +1,5 @@
-<!-- ![Alt text](logo.png) -->
 <p align="center">
-    <img width="100" src="logo.png">
+    <img width="100" src="emb.png">
 </p>
 
 <h1 align="center"> 
