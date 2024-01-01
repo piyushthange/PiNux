@@ -76,8 +76,32 @@ Operations can only be done with 16 bit numbers.
 
 ### *Segmentation Memory Model*
 
-Memory is accessed by segment & an offset
-For bootloader use the following command to create a bin out of an asm\
+In Segmentation Memory Model memory is accessed by segment & an offset. Due to \
+nature of SMM programs can be loaded into different areas of memory and could be \
+run without any issues. \
+In real mode there are 4 Segment Registers
+- CS - Code Segment
+- SS - Stack Segment
+- DS - Data Segment
+- ES - Extra Segment
+
+We use Segment Registers so as to access memory in RAM. Using segment register & \
+an offset, absolute position of a particular piece of data could be found in RAM \
+Through the combination of segment register & offset we can calculate absolute \
+position of data.
+eg. Suppose our code segment is at `0x7C0` & Assembly origin `ORG` is at `0` \
+Let's assume the first instruction to be at origin `0` so our offset is zero \
+To calculate the absolute position of first instruction in our program we follow \
+- Step 1:
+`0x7C0 * 16 = 0x7C00` --> Multiply the segment with 16
+- Step 2:
+`0x7C00 + 0 = 0x7C00` --> Add the OFFSET to o/p value. This is where our first \
+instruction is.
+
+> [!TIP]
+> In Hexadecimal, multiplying by 16 is equivalent to shifting one postion to left
+
+Different instruction use different segment registers.
 
 ### *Creation of bootloader*
 
