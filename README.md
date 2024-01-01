@@ -11,7 +11,6 @@
 - [Fundamentals & Environment Setup](#fundamentals--environment-setup)
 - [Real Mode Development](#real-mode-development)
 - [Protected Mode Development](#protected-mode-development)
-    - [Additional Resources](#additional-resource)
   
 ---
 
