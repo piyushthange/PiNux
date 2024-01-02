@@ -116,4 +116,26 @@ To check bootloader on a real system we'll burn the `boot.bin` to  USB key.
 - Enter BIOS go to boot menu 
 - Boot using USB key.
 
+### *Interrupt Vector Table*
+
+Interrupts are like subroutines & you don't need to know the memory address to \
+invoke them. Interrupts are called through interrupt number rather than memory \
+addresses. These can be setup by programmers invoke the code. \
+Invoking an interrupt means a process is interrupted, old state is saved on the \
+stack & interrupt is exectued. Interrupt vector table is a table describing \
+where these interrupts are on the memory. There are 256 interrupt handelers. \
+Each entry contains 4 Bytes(OFFSET:SEGMENT) & interrupts are in numberical order \
+in the table. IVT starts at absolute address `0x00` in RAM with four bytes per \
+interrupt(OFFSET:SEGMENT).
+
+|Interrupt|Address|
+|:---:|:---:|
+|0|0x00|
+|1|0x04|
+|2|0x08|
+
+What offset will be 0x15 is? \
+0x15 * 0x04 = 0x54 or 84 decimal. `int 0x15` processor looks at offset 84 in RAM. \
+84-85 --> OFFSET(2 bytes) : 86-87 --> SEGMENT(2 bytes)
+
 # Protected Mode Development
