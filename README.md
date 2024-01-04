@@ -140,4 +140,19 @@ What offset will be 0x15 is? \
 
 ### *File System & Disk Access*
 
+File Systems are kernel implementation & a file system driver need to be created \
+in order to let kernel understand the FS. Data is written in sectors & sector \
+size are typically 512 bytes. Reading a sector from a disk will return 512 bytes \
+of data for the chosen sector. 
+Sectors --> CHS(Cylinder Head Sector) The old way in which sectors are read & \
+written using a *head* *track* & *sector*. \
+The modern approach for disk access is LBA(Logical Block Address). To access LBA \
+just need to speciyf a number which start from zero. LBA 0 is 1st sector on the \
+disk LBA 1 is the 2nd sector and so on.
+Calculating LBA e.g suppose we want to read the bytes at position 58376 on disk \
+- LBA = 58376 / 512 = 114
+- offset = 58376 % 512 = 8
+
+
+
 # Protected Mode Development
