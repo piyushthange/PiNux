@@ -1,0 +1,4 @@
+all:
+	nasm -f bin boot_05.asm -o boot.bin
+clean:
+	rm -rf boot.bin
