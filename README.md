@@ -153,6 +153,4 @@ Calculating LBA e.g suppose we want to read the bytes at position 58376 on disk 
 - LBA = 58376 / 512 = 114
 - offset = 58376 % 512 = 8
 
-
-
 # Protected Mode Development
