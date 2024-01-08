@@ -153,4 +153,11 @@ Calculating LBA e.g suppose we want to read the bytes at position 58376 on disk 
 - LBA = 58376 / 512 = 114
 - offset = 58376 % 512 = 8
 
+> [!TIP]
+> Go to the [boot_05.asm](bootloader/boot_05.asm) do `make -f Makefile_05` 
+> and test it 
+
+This will load the contents from msg.txt & display using the `int 13` i.e read \
+form sector from drive. [int 13](http://www.ctyme.com/intr/rb-0607.htm)
+
 # Protected Mode Development
