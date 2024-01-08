@@ -10,20 +10,6 @@ times 33 db 0 ; this will turn 1st 33 bytes to 0 as described in BPB(https://wik
 start:
 	jmp 0x7c0:step2
 
-handle_zero:
-	mov ah, 0eh
-	mov al, 'A'
-	mov bx, 0x00
-	int 0x10
-	iret
-
-handle_one:
-	mov ah, 0eh
-	mov al, 'V'
-	mov bx, 0x00
-	int 0x10
-	iret
-
 step2:
 	cli ; Clear Interrupts
 	mov ax, 0x7c0
@@ -34,24 +20,25 @@ step2:
 	mov sp, 0x7c00
 	sti ; enables Interrupts
 
-	;Changing the Interrupt Vector Table
-	; 1st interrupt 0
-	mov word[ss:0x00], handle_zero ;use stack segment by default it'll use data segment
-	mov word[ss:0x02], 0x7c0
+	mov ah, 2 ; read sector command
+	mov al, 1 ; One sector to read
+	mov ch, 0 ; cylinder low eight bits
+	mov cl, 2 ;read sector two
+	mov dh, 0 ; head number
+	mov bx, buffer
+	int 0x13
+	
+	jc error ; jump carry error
 
-	; interrupt 1
-	mov word[ss:0x04], handle_one
-	mov word[ss:0x06], 0x7c0
+	mov si, buffer
+	call print
 
-	int 1 ; this will call the interrupt
-;
-;	mov ax, 0x00
-;	div ax
-;
-;	int 0
+	jmp $
 
-	mov si, message ; si will point to first char in message
-	call print ; calls the print routine
+error:
+	mov si, error_msg
+	call print
+
 	jmp $	; jumps back to start
 
 print: ;This will call routine print_char
@@ -70,8 +57,10 @@ print_char: ;This is routine
 	mov ah, 0eh
 	int 0x10 ; call the BIOS
 	ret 
-	
-message: db 'Hello, World!', 0
+
+error_msg: db 'Failed to load sector'
 
 times 510-($ - $$) db 0
 dw 0xAA55 ; little endian
+
+buffer:
