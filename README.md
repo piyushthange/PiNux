@@ -161,3 +161,21 @@ This will load the contents from msg.txt & display using the `int 13` i.e read \
 form sector from drive. [int 13](http://www.ctyme.com/intr/rb-0607.htm)
 
 # Protected Mode Development
+
+PROTECTED MODE is a processor state in x86 architecture which gives access to \
+memory protection & 4GB of address space. Protected Mode allows you to protect \
+Memory from being accessed as well as prevent user program talking with hardware \
+There are 4 rings 
+- Ring 0 - This is most privileged ring & can access h/w read & write memorythe \
+kernel runs on ring 0 \
+- Ring 1 & 2 - Generally not used & are used by device drivers.
+- Ring 3 - Least privleged ring, user program runs on this ring.
+
+Different Memory Schemes are like
+- Selectors(CS, DS, ES, SS)
+- Paging(Remapping Memory Address)
+
+In Selector Memory Scheme the segmentation register become selector registers \
+Selectors point to data structure that describe memory ranges and the permission \
+required to access a given range. \
+Paging Memory Scheme is most common scheme for kernels
