@@ -178,4 +178,5 @@ Different Memory Schemes are like
 In Selector Memory Scheme the segmentation register become selector registers \
 Selectors point to data structure that describe memory ranges and the permission \
 required to access a given range. \
-Paging Memory Scheme is most common scheme for kernels
+Paging Memory Scheme is most common scheme for kernels.
+
