@@ -1,0 +1,8 @@
+all:
+	nasm -f bin boot_06.asm -o boot.bin
+	# all the contents in msg.txt will be converted to bin & appended to bin
+	dd if=./msg.txt >> boot.bin 
+	# following will append 1 sector of 512 bytes with all zeros to boot.bin after the contents of msg.txt 
+	dd if=/dev/zero bs=512 count=1 >> boot.bin 
+clean:
+	rm -rf boot.bin
