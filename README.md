@@ -178,5 +178,27 @@ Different Memory Schemes are like
 In Selector Memory Scheme the segmentation register become selector registers \
 Selectors point to data structure that describe memory ranges and the permission \
 required to access a given range. \
-Paging Memory Scheme is most common scheme for kernels.
+Paging Memory Scheme is most common scheme for kernels. Memory protection is 
+easy to control. It gives 4GB of addressable memory hence we gain access to 32- \
+bit instruction and we can work with 32-bit registers
+
+### *Switching to Proteced Mode*
+
+The instruction `lgdt [gdtr]` loads start address of GDT(GLOBAL DESCRIPTOR TABLE) \
+Following will give the entry point to Protection Mode
+
+```assembly
+cli            ; disable interrupts
+lgdt [gdtr]    ; load GDT register with start address of Global Descriptor Table
+mov eax, cr0 
+or al, 1       ; set PE (Protection Enable) bit in CR0 (Control Register 0)
+mov cr0, eax
+ 
+; Perform far jump to selector 08h (offset into GDT, pointing at a 32bit PM code segment descriptor) 
+; to load CS with proper PM32 descriptor)
+jmp 08h:PModeMain
+ 
+PModeMain:
+; load DS, ES, FS, GS, SS, ESP
+```
 
