@@ -33,8 +33,8 @@ step2:
 	jmp CODE_SEG:load32
 
 ;GDT
-gtd_start:
-gtd_null:
+gdt_start:
+gdt_null:
 	dd 0x0 ;64 bits of null descriptor
 	dd 0x0
 
@@ -64,6 +64,14 @@ gdt_descriptor:
 
 [BITS 32]
 load32:
+	mov ax, DATA_SEG
+	mov ds, ax
+	mov es, ax
+	mov fs, ax
+	mov gs, ax
+	mov ss, ax
+	mov ebp, 0x00200000
+	mov esp, ebp
 	jmp $
 
 times 510-($ - $$) db 0

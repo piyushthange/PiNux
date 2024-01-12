@@ -1,4 +1,4 @@
 all:
-	nasm -f bin 01_boot.asm -o boot.bin
+	nasm -f bin boot_01.asm -o boot1.bin
 clean:
-	rm -rf boot.bin
+	rm -rf boot1.bin
