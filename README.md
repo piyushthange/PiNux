@@ -154,7 +154,7 @@ Calculating LBA e.g suppose we want to read the bytes at position 58376 on disk 
 - offset = 58376 % 512 = 8
 
 > [!TIP]
-> Go to the [boot_05.asm](bootloader/boot_05.asm) do `make -f Makefile_05` 
+> Use `make` and boot the `boot5.bin` using `qemu-system-x86_64 -hda bin/boot.bin`
 > and test it 
 
 This will load the contents from msg.txt & display using the `int 13` i.e read \
@@ -166,8 +166,7 @@ PROTECTED MODE is a processor state in x86 architecture which gives access to \
 memory protection & 4GB of address space. Protected Mode allows you to protect \
 Memory from being accessed as well as prevent user program talking with hardware \
 There are 4 rings 
-- Ring 0 - This is most privileged ring & can access h/w read & write memorythe \
-kernel runs on ring 0 \
+- Ring 0 - This is most privileged ring & can access h/w read & write memory the kernel runs on ring 0.
 - Ring 1 & 2 - Generally not used & are used by device drivers.
 - Ring 3 - Least privleged ring, user program runs on this ring.
 
