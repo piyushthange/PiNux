@@ -1,0 +1,4 @@
+all:
+	nasm -f bin boot_07.asm -o boot7.bin
+clean:
+	rm -rf boot7.bin
