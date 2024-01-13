@@ -201,3 +201,7 @@ PModeMain:
 ; load DS, ES, FS, GS, SS, ESP
 ```
 
+### *A20 Line*
+
+A20 is Address Line is the physical representation of 21st bit of any memory \
+access
