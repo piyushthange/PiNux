@@ -3,7 +3,7 @@ BUILD_DIR := build
 BIN_DIR := bin
 
 # List of Makefile 
-COMPONENTS := 01 02 03 04 05 06
+COMPONENTS := 01 02 03 04 05 06 07
 
 # Targets
 all: $(COMPONENTS)
