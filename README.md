@@ -204,4 +204,4 @@ PModeMain:
 ### *A20 Line*
 
 A20 is Address Line is the physical representation of 21st bit of any memory \
-access
+access. [A20 Line](https://wiki.osdev.org/A20_Line)
