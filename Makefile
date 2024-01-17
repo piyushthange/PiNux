@@ -18,5 +18,6 @@ clean:
 	@for component in $(COMPONENTS); do \
 		$(MAKE) -C $(SRC_DIR) -f Makefile_$$component clean; \
 	done
+	rm -rf $(BIN_DIR)
 
 .PHONY: all clean
