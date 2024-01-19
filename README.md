@@ -208,4 +208,7 @@ access. [A20 Line](https://wiki.osdev.org/A20_Line)
 
 ### *Cross Compilation for using C*
 
+Cross compilation is a process of compiling the code of a different architecture \
+on the host using certain tools.
+
 [OS Dev GCC cross compiler](https://wiki.osdev.org/GCC_Cross-Compiler)
