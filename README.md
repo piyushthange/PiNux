@@ -205,3 +205,7 @@ PModeMain:
 
 A20 is Address Line is the physical representation of 21st bit of any memory \
 access. [A20 Line](https://wiki.osdev.org/A20_Line)
+
+### *Cross Compilation for using C*
+
+[OS Dev GCC cross compiler](https://wiki.osdev.org/GCC_Cross-Compiler)
