@@ -23,6 +23,11 @@ sudo apt install -y build-essential \
 		 bless 
 
 #function to install latest gcc
-gcc() {
+gcc_() {
+
+}
+
+#function to install latest binutils
+binut(){
 
 }
