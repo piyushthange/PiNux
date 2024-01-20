@@ -21,3 +21,8 @@ sudo apt install -y build-essential \
 		 texinfo \
 		 libisl-dev \
 		 bless 
+
+#function to install latest gcc
+gcc() {
+
+}
