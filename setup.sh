@@ -32,5 +32,8 @@ gcc_13() {
 
 #function to install latest binutils
 binut(){
+	wget https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.xz
+	tar -xf binutils-2.41.tar.xz
+	cd binutils-2.41
 
 }	
