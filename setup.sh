@@ -23,11 +23,14 @@ sudo apt install -y build-essential \
 		 bless 
 
 #function to install latest gcc
-gcc_() {
+gcc_13() {
+	wget https://ftp.gnu.org/gnu/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz
+	tar -xf gcc-13.2.0.tar.xz
+	cd gcc-13.2.0
 
 }
 
 #function to install latest binutils
 binut(){
 
-}
+}	
