@@ -31,8 +31,15 @@ export PATH="$PREFIX/bin:$PATH"
 gcc_13() {
 	wget https://ftp.gnu.org/gnu/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz
 	tar -xf gcc-13.2.0.tar.xz
-	cd gcc-13.2.0
-	
+	which --$TARGET-as || echo $TARGET-as is not in the PATH
+	mkdir build-gcc
+	cd build-gcc
+	../gcc-13.2.0/configure --target=$TARGET --prefix="$PREFIX" --disable-nls \
+	--enable-languages=c,c++ --without-headers
+	make all-gcc -j`nproc`
+	make all-target-libgcc -j`nproc`
+	make install-gcc -j`nproc`
+	make install-target-libgcc -j`nproc`
 }
 
 #function to install latest binutils
