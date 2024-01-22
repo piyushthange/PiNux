@@ -22,18 +22,27 @@ sudo apt install -y build-essential \
 		 libisl-dev \
 		 bless 
 
+export	PREFIX="$HOME/opt/corss"
+mkdir $PREFIX
+export TARGET=i686-elf
+export PATH="$PREFIX/bin:$PATH"
+
 #function to install latest gcc
 gcc_13() {
 	wget https://ftp.gnu.org/gnu/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz
 	tar -xf gcc-13.2.0.tar.xz
 	cd gcc-13.2.0
-
+	
 }
 
 #function to install latest binutils
 binut(){
 	wget https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.xz
 	tar -xf binutils-2.41.tar.xz
-	cd binutils-2.41
-
+	mkdir build-binutils
+	cd build-bintuils
+	../binutils-2.41/configure --target=$TARGET --prefix="$PREFIX" \
+	--with-sysroot --disable-nls --disable-werror
+	make -j`nproc`
+	make install
 }	
