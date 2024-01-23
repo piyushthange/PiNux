@@ -212,3 +212,8 @@ Cross compilation is a process of compiling the code of a different architecture
 on the host using certain tools.
 
 [OS Dev GCC cross compiler](https://wiki.osdev.org/GCC_Cross-Compiler)
+
+### *Loading 32 bit kernel into memory and working with debugging symbols*
+
+[build.sh](./build.sh) - Created for exporting required environment variables \
+& then running `make` on the main make file.
