@@ -26,9 +26,12 @@ export	PREFIX="$HOME/opt/corss"
 mkdir $PREFIX
 export TARGET=i686-elf
 export PATH="$PREFIX/bin:$PATH"
+mkdir -p ../ENV
+ENV=`readlink -f ../ENV`
 
 #function to install latest gcc
 gcc_13() {
+	cd $ENV
 	wget https://ftp.gnu.org/gnu/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz
 	tar -xf gcc-13.2.0.tar.xz
 	which --$TARGET-as || echo $TARGET-as is not in the PATH
@@ -44,6 +47,7 @@ gcc_13() {
 
 #function to install latest binutils
 binut(){
+	cd $ENV
 	wget https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.xz
 	tar -xf binutils-2.41.tar.xz
 	mkdir build-binutils
@@ -52,4 +56,4 @@ binut(){
 	--with-sysroot --disable-nls --disable-werror
 	make -j`nproc`
 	make install
-}	
+}
