@@ -5,6 +5,8 @@ BIN_DIR := bin
 # List of Makefile 
 COMPONENTS := 01 02 03 04 05 06 07
 
+FILES = ./build/kernel.asm.o
+
 # Targets
 all: $(COMPONENTS)
 
