@@ -1,11 +1,17 @@
 SRC_DIR := src/bootloader
 BUILD_DIR := build
 BIN_DIR := bin
+FILES = ./build/kernel.asm.o
 
 # List of Makefile 
 COMPONENTS := 01 02 03 04 05 06 07
 
-FILES = ./build/kernel.asm.o
+./bin/boot.bin: ./src/bootloader/boot_*.asm
+	nasm -f bin ./src/bootloader/boot_*.asm -o ./bin/boot.bin
+
+./build/kernel.asm.o: ./src/kernel.asm
+	nasm -f elf -g ./src/kernel.asm -o ./build/kernel.asm.o
+
 
 # Targets
 all: $(COMPONENTS)
