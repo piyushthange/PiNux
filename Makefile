@@ -12,9 +12,9 @@ COMPONENTS := 01 02 03 04 05 06 07
 ./build/kernel.asm.o: ./src/kernel.asm
 	nasm -f elf -g ./src/kernel.asm -o ./build/kernel.asm.o
 
-
 # Targets
-all: $(COMPONENTS)
+all: ./bin/boot.bin $(COMPONENTS) $(FILES)
+	dd if=./bin/boot.bin >> ./bin/os.bin
 
 # Build each component
 $(COMPONENTS):
