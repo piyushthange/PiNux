@@ -14,6 +14,7 @@ COMPONENTS := 01 02 03 04 05 06 07
 
 # Targets
 all: ./bin/boot.bin $(COMPONENTS) $(FILES)
+	rm -rf ./bin/os.bin
 	dd if=./bin/boot.bin >> ./bin/os.bin
 
 # Build each component
