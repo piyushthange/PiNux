@@ -1,4 +1,13 @@
-all:
+all: ../../bin/boot_07.bin
 	nasm -f bin boot_07.asm -o boot7.bin
+	./bin/boot.bin: ./src/bootloader/boot_*.asm
+		nasm -f bin ./src/bootloader/boot_*.asm -o ./bin/boot.bin
+	
+	./build/kernel.asm.o: ./src/kernel.asm
+		nasm -f elf -g ./src/kernel.asm -o ./build/kernel.asm.o
+	# Targets
+	all: ./bin/boot.bin $(COMPONENTS) $(FILES)
+		rm -rf ./bin/os.bin
+		dd if=./bin/boot.bin >> ./bin/os.bin
 clean:
 	rm -rf boot7.bin
