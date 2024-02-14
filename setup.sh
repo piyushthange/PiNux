@@ -31,7 +31,6 @@ function pre_build() {
 	ENV=`readlink -f ../ENV`
 }
 
-
 #function to install latest gcc
 gcc_13() {
 	cd $ENV
@@ -62,3 +61,5 @@ binut(){
 }
 
 pre_build
+binut
+gcc_33
