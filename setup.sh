@@ -60,3 +60,5 @@ binut(){
 	make -j`nproc`
 	make install
 }
+
+pre_build
