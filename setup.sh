@@ -22,12 +22,15 @@ sudo apt install -y build-essential \
 		 libisl-dev \
 		 bless 
 
-export	PREFIX="$HOME/opt/corss"
-mkdir $PREFIX
-export TARGET=i686-elf
-export PATH="$PREFIX/bin:$PATH"
-mkdir -p ../ENV
-ENV=`readlink -f ../ENV`
+function pre_build() {
+	export	PREFIX="$HOME/opt/corss"
+	mkdir $PREFIX
+	export TARGET=i686-elf
+	export PATH="$PREFIX/bin:$PATH"
+	mkdir -p ../ENV
+	ENV=`readlink -f ../ENV`
+}
+
 
 #function to install latest gcc
 gcc_13() {
