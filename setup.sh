@@ -24,6 +24,10 @@ sudo apt install -y build-essential \
 
 function pre_build() {
 	export	PREFIX="$HOME/opt/corss"
+	if [ $PREFIX -d ]; then
+		export TARGET=i686-elf
+		export PATH="$PREFIX/bin:$PATH"
+	do
 	mkdir $PREFIX
 	export TARGET=i686-elf
 	export PATH="$PREFIX/bin:$PATH"
