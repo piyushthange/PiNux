@@ -22,12 +22,12 @@ sudo apt install -y build-essential \
 		 libisl-dev \
 		 bless 
 
-function pre_build() {
+pre_build() {
 	export	PREFIX="$HOME/opt/corss"
 	if [ $PREFIX -d ]; then
 		export TARGET=i686-elf
 		export PATH="$PREFIX/bin:$PATH"
-	do
+	fi
 	mkdir $PREFIX
 	export TARGET=i686-elf
 	export PATH="$PREFIX/bin:$PATH"
