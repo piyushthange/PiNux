@@ -1,0 +1,2 @@
+Create different version of kernels which could be generated to bins and 
+put it into the Makefile
